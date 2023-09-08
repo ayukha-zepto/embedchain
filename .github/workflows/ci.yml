@@ -11,6 +11,16 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
+        path:
+          - docs
+          - embedchain
+          - examples
+          - notebook
+          - tests
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.path }}
 
     steps:
       - uses: actions/checkout@v3
